@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art and Craft Gallery</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #c3d9f9; /* Light gray background */
+        }
+
+        header {
+            background: #1b1bd1; /* Blue header */
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(73, 123, 224, 0.685);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #adc4f4;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00; /* Yellow on hover */
+        }
+
+        section {
+            padding: 40px;
+            margin: 20px;
+            background: #a8c6f5; /* White background for sections */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+        .section2{
+            background-color: rgb(211, 255, 255);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 8px; /* Rounded corners for images */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+        }
+
+        .quote-section {
+            margin-top: 40px;
+            padding: 20px;
+            background: #a1b8da; /* Light gray background for quotes */
+            border-radius: 8px;
+            display: none; /* Hidden by default */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-button {
+            padding: 10px 20px;
+            background: #28a745; /* Green button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .quote-button:hover {
+            background: #218838; /* Darker green on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333; /* Dark footer */
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: white;">Art and Craft Gallery</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#art">Art</a></li>
+                <li><a href="#craft">Craft</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+<div class="section2">
+    <section id="art">
+        <h1>Art Gallery</h1>
+        <div class="gallery-grid">
+            <img src="art1.jfif" height="200"weidth="50"alt="Art 1">
+            <img src="art2.jfif" height="200"weidth="50"alt="Art 2">
+            <img src="art3.jpg" height="200"weidth="50"alt="Art 3">
+            <img src="art4.jfif" height="200"weidth="50"alt="Art 4">
+            <img src="art5.jpg" height="200"weidth="50"alt="Art 5">
+        </div>
+    </section>
+</div>
+    <section id="craft">
+        <h1>Craft Gallery</h1>
+        <div class="gallery-grid">
+            <img src="craft1.jpg" height="200"weidth="50"alt="Craft 1">
+            <img src="craft2.jpg" height="200"weidth="50"alt="Craft 2">
+            <img src="craft3.webp" height="200"weidth="50"alt="Craft 3">
+            <img src="craft4.jfif" height="200"weidth="50"alt="Craft 4">
+            <img src="art6.jfif" height="200"weidth="50"alt="Craft 5">
+        </div>
+    </section>
+
+    <section>
+        <h2>Famous Quote on Arts and Crafts</h2>
+        <button class="quote-button" onclick="showQuote()">Show Quote</button>
+        <div class="quote-section" id="quoteSection">
+            <p id="quoteText"></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Art and Craft Gallery</p>
+    </footer>
+
+    <script>
+        function showQuote() {
+            const quotes = [
+                "Every artist was first an amateur. - Ralph Waldo Emerson",
+                "Art is not freedom from discipline, but disciplined freedom. - John F. Kennedy",
+                "Creativity takes courage. - Henri Matisse",
+                "The only way to do great work is to love what you do. - Steve Jobs",
+                "Art enables us to find ourselves and lose ourselves at the same time. - Thomas Merton"
+            ];
+
+            // Randomly select a quote
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            
+            // Display the quote in the quote section
+            document.getElementById('quoteText').innerText = randomQuote;
+            document.getElementById('quoteSection').style.display = 'block'; // Show the quote section
+        }
+    </script>
+</body>
+</html>
